@@ -15,6 +15,6 @@
       ansible.builtin.debug:
         msg: "{{ ansible_facts['architecture'] }}"
 
-    - name: Print Architecture
+    - name: Print Hostname
       ansible.builtin.debug:
         msg: "{{ inventory_hostname }}"
