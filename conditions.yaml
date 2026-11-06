@@ -1,0 +1,21 @@
+---
+- name: Creating Users
+  hosts: all
+  become: true
+  tasks:
+    - name: Creating User Deep
+      user:
+        name: "deep"
+        state: present
+      when: inventory_hostname == "node1"
+    
+    - name: Creating User Deep
+      user:
+        name: "deep"
+        state: present
+      failed_when: inventory_hostname == "node1"
+
+    - name: Creating User Deep
+      ansible.builtin.command: "df -h"
+      register: data
+      changed_when: data.rc == 0

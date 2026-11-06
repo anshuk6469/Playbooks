@@ -1,0 +1,15 @@
+---
+- name: Creating Users
+  hosts: all
+  vars_prompt:
+    - name: user_name
+      prompt: "What is the user name?"
+      private: false
+  become: true
+  tasks:
+    - name: Creating User Deep
+      user:
+        name: "{{ user_name }}"
+        state: present
+      vars:
+        user_name: "koenig"

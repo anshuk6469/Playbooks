@@ -1,0 +1,15 @@
+---
+- name: Creating Users
+  hosts: all
+  become: true
+  tasks:
+    - name: Creating User Deep
+      user:
+        name: "{{ item }}"
+        state: present
+      loop:
+       - "deep"
+       - "koenig"
+       - "patrick"
+
+    

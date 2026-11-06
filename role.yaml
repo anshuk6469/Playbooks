@@ -1,0 +1,6 @@
+---
+- name: Creating Users
+  hosts: all
+  become: true
+  roles:
+    - geerlingguy.apache

@@ -1,0 +1,20 @@
+---
+- name: Printing facts
+  hosts: all
+  #remote_user: "deep"
+  tasks:
+    - name: Print Architecture
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts.architecture }}"
+
+    - name: Print Architecture
+      ansible.builtin.debug:
+        msg: "{{ ansible_architecture }}"
+
+    - name: Print Architecture
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts['architecture'] }}"
+
+    - name: Print Architecture
+      ansible.builtin.debug:
+        msg: "{{ inventory_hostname }}"

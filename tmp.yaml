@@ -1,0 +1,11 @@
+---
+- name: Creating Users
+  hosts: all
+  become: true
+  tasks:
+    - name: Creating User Deep
+      ansible.builtin.template:
+        src: index.j2
+        dest: /tmp/index.html
+
+    
