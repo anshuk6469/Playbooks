@@ -18,6 +18,7 @@ pipeline {
         stage('Ansible Syntax Check') {
             steps {
                 ansiblePlaybook(
+                    installation: 'ansible',
                     playbook: 'facts.yaml',
                     credentialsId: 'ansible-ssh',
                     extras: '--syntax-check'
@@ -28,6 +29,7 @@ pipeline {
         stage('Execute Ansible Playbook') {
             steps {
                 ansiblePlaybook(
+                    installation: 'ansible',
                     playbook: 'facts.yaml',
                     credentialsId: 'ansible-ssh',
                     extras: '-v'
