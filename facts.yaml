@@ -1,7 +1,7 @@
 ---
 - name: Printing facts
   hosts: all
-  #remote_user: "deep"
+  remote_user: student
   tasks:
     - name: Print Architecture
       ansible.builtin.debug:
